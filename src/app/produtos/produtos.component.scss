@@ -1,0 +1,45 @@
+
+.informe{
+    text-align: center;
+}
+
+.tabela{
+    display: flex;
+    max-width: 70%;
+    align-content: center;
+}
+
+button{
+    padding:15px 45px;
+    margin:0px 10px;
+}
+.categorias h2{
+    margin-left:5%;
+    margin-right:auto;
+    color: #9ceaf8;
+}
+.botoes-pesquisa{
+    text-align: center;
+    margin-bottom: 30px;
+    span {
+        color: black;
+        font-weight: bold;
+        font-size: 15px;
+    }
+    button{
+        border-radius: 10px;
+    }
+}
+
+button:hover {
+    background-color:#f69a22;
+    cursor:pointer
+}
+
+@media (max-width: 600px) {
+    .botoes-pesquisa{
+        padding:15px 45px;
+        margin:0px 10px;
+        display: grid;
+    }    
+}

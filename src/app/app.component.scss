@@ -1,0 +1,40 @@
+
+.container{
+    max-width: 95%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.linha{
+    margin-top:10px;
+    border-bottom: solid 2px;
+}
+
+nav {
+    text-align: center;
+}
+
+.titulo {
+    color: #f69a22;
+    text-align: center;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 40px;
+    text-align: center;
+}
+nav a {
+    color: white; 
+    text-decoration: none;
+    font-size: 25px;
+    padding: 0px 15px;
+    font-weight: bold;
+}
+nav a:hover {
+    color:#f69a22;
+}
+
+@media (max-width: 600px) {
+    .links-acesso{
+        display: grid;
+    }   
+}

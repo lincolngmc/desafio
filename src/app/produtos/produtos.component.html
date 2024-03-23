@@ -1,0 +1,43 @@
+<div class="produtos-container">
+    <div class="categorias">
+        <h2>Escolha a Categoria de Livros</h2>
+        <div class="botoes-pesquisa">
+            <button *ngFor="let categoria of categorias">
+                <span (click)="pesquisar_tabela(categoria.valor)">{{categoria.nome}}</span>
+            </button>
+        </div>
+        <div class="informe" *ngIf="visualizar == ''">
+        </div>
+        <div class="informe" *ngIf="visualizar == 'esperar'">
+            <p>Carregando...</p>
+        </div>
+        <div *ngIf="visualizar == 'dados'">
+            <p-table [value]="produtos"  [paginator]="true" [rows]="10" [showCurrentPageReport]="true" responsiveLayout="scroll"
+            currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [rowsPerPageOptions]="[10,25,50]">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th pSortableColumn="albumId">Grupo <p-sortIcon field="albumId"></p-sortIcon></th>
+                        <th pSortableColumn="id">Id <p-sortIcon field="id"></p-sortIcon></th>
+                        <th pSortableColumn="title">Título <p-sortIcon field="title"></p-sortIcon></th>
+                        <th pSortableColumn="thumbnailUrl">Capa <p-sortIcon field="thumbnailUrl"></p-sortIcon></th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-produto>
+                    <tr >
+                        <td>{{produto.albumId}}</td>
+                        <td>{{produto.id}}</td>
+                        <td>{{produto.title}}</td>
+                        <td><a href="{{produto.url}}" target="_blank"><img src="{{produto.thumbnailUrl}}" with="20" height="20" alt="Click para Ampliar"></a></td>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="paginatorleft">
+                    <p-button type="button" icon="pi pi-plus" styleClass="p-button-text"></p-button>
+                </ng-template>
+                <ng-template pTemplate="paginatorright">
+                    <p-button type="button" icon="pi pi-cloud" styleClass="p-button-text"></p-button>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+    
+</div>
